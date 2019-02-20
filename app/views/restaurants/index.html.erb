@@ -13,14 +13,16 @@
     </thead>
     <tbody>
       <% @restaurants.each do |restaurant| %>
-      <tr>
-        <td><%=  restaurant.name %></td>
-        <td><%=  restaurant.address %></td>
-        <td><%=  restaurant.phone_number %></td>
-        <td><%=  restaurant.category %></td>
-      </tr>
+        <tr>
+          <td><%= link_to restaurant.name, restaurant %></td>
+          <td><%= restaurant.address %></td>
+          <td><%= restaurant.phone_number %></td>
+          <td><%= restaurant.category %></td>
+        </tr>
       <% end %>
     </tbody>
   </table>
+
+  <p><%= link_to 'Add a new restaurant', new_restaurant_path %></p>
 </div>
 
